@@ -1,0 +1,40 @@
+
+.container_nav {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 135px;
+    align-items: flex-start;
+}
+
+.headers{
+    display: flex;
+}
+
+
+.logo {
+    border-right: 1px solid #BDBDBD;
+    margin-right: 20px;
+    padding-right: 20px;
+    
+}
+
+.container_nav span{
+    color: #BDBDBD;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 95%;
+    line-height: 21px;
+    letter-spacing: 0.15em;
+    font-variant: small-caps;
+}
+
+.idioma{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #333333;
+}
