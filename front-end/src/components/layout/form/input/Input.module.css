@@ -1,0 +1,23 @@
+.form_login{
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.form_login label {
+    font-size: 14px;
+    color:#333333;
+    font-weight: bold;
+}
+
+.form_login input {
+    width: 320px;
+    height: 46px;
+    border-radius: 0px;
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+}
+
+.form_login input::placeholder {
+    color: #BDBDBD;
+}
