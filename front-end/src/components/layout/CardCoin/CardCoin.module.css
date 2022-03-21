@@ -1,0 +1,32 @@
+.container_card_coin{
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    height: 189px;
+    padding: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.container_card_coin h1 {
+    color: #333333;
+    font-size: 58px;
+    margin-top: 10px;
+}
+
+.container_card_coin h1 span{
+    color: #828282;
+    font-size: 15px;
+    font-weight: 0;
+}
+
+
+.container_card_coin p{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.container_card_coin img{
+    margin: auto;
+}
