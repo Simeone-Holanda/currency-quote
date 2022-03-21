@@ -1,0 +1,31 @@
+.container_dashboard{
+    margin: auto;
+    width: 1020px;
+}
+
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container_header img {
+    width: 22px;
+    height: 18px;
+}
+
+.container_cards{
+    display: flex;
+    justify-content: space-around;
+}
+
+.select_coin_type{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    border: none;
+}
