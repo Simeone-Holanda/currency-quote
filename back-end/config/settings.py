@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # libs externas
-    "corsheaders",
+    'rest_framework',
+    'corsheaders',
 
     # apis
     'quotes.apps.QuotesConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -106,6 +108,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSE': {
+        'rest-framework_simplejwt.authentication.JWTAuthentication',
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -129,6 +137,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",
-]
+# Config de certificado de formularios
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:3000']
+
+# perigoso definiri como true, pois qualquer dominimo pode enviar posts
+CORS_ORIGIN_ALLOW_ALL = False
+
+# apenas esse dominio pode enviar dados
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
