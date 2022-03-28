@@ -1,18 +1,18 @@
 import requests
 import unidecode
+from util.interval_date import interval_date
 from django.http.response import JsonResponse
 
 
 def consumer_api_quotation(request, coin, days=20):
-    print(coin)
     api = f"https://economia.awesomeapi.com.br/json/daily/{coin}/{days}"
 
     dataQuotation = requests.get(api)
     dataQuotation = dataQuotation.json()
+    date_extract = dataQuotation[0]['create_date'].split(' ')[0]
 
     response = {
         'data': [],
-        'day': dataQuotation[0]['create_date'].split(' ')[0],
         'name_quotation': unidecode.unidecode(dataQuotation[0]['name']),
     }
     for quote in dataQuotation:
@@ -20,7 +20,8 @@ def consumer_api_quotation(request, coin, days=20):
         for k, v in quote.items():
             if k in ['high', 'low', 'varBid']:
                 data_required[k] = v
-
+        data_required['date'] = interval_date(date_extract, days)
+        days -= 1
         response['data'].append(data_required)
 
     return JsonResponse(response, content_type="application/json")
