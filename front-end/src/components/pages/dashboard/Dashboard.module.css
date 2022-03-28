@@ -42,10 +42,6 @@
     cursor: pointer;
 }
 
-.select_coin_type button{
-    cursor: pointer;
-}
-
 .select_coin_type h3{
     font-size: 3.6rem;
 }

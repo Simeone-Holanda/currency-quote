@@ -42,7 +42,6 @@ const FormLogin = ({ handleSubmit, btnText }) => {
             <div>
                 <nav className={styles.nav}>
                     <Link className={styles.link} to='/register'>Cadastre-se</Link>
-                    <Link className={styles.link} to='/dashboard'>Entre como anônimo</Link>
                 </nav>
             </div>
 

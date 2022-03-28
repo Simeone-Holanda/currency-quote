@@ -8,9 +8,9 @@ import { useState } from "react";
 const FormRegister = ({ handleSubmit, btnText }) => {
 
     const [dataUser, setDataUser] = useState({})
+    
     const submit = (e) => {
         e.preventDefault()
-        console.log(e)
         handleSubmit(dataUser)
     }
 
@@ -37,7 +37,7 @@ const FormRegister = ({ handleSubmit, btnText }) => {
                 <Input
                     type="password"
                     text="Senha"
-                    name="password1"
+                    name="password"
                     handleOnChange={handleOnChange}
                     placeholder="Enter Password"
                 />

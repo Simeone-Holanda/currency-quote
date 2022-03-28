@@ -2,15 +2,18 @@ import styles from '../login/Login.module.css';
 import { useNavigate } from 'react-router-dom';
 import ScreenLogin from '../../../img/ScreenLogin.png';
 import FormRegister from "../../layout/form/screen/FormRegister";
+import { useState } from 'react';
+import Message from '../../layout/Message/Message';
 
 const Register = () => {
     const navigate = useNavigate()
+    const [message, setMessage] = useState('')
 
     const API_HOST = 'http://localhost:8000/auth/register/';
 
     function createUser(dataUser) {
-        // TODO: Fazer o tratamento de respostas da api e mostrar mensagens com base neles
-        const response = fetch(`${API_HOST}auth/`, {
+        setMessage('')
+        const response = fetch(`${API_HOST}`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -19,13 +22,19 @@ const Register = () => {
             body: JSON.stringify(dataUser)
         }).then(data => data.json())
             .then(resp => {
-                navigate('/login', { state: resp })
+                if (resp['status'] == 400) {
+                    setMessage(resp['message'])
+                } else {
+                    resp['type'] = 'success'
+                    navigate('/login', { state: resp })
+                }
             })
             .catch(err => console.log(err))
     }
 
     return (
         <>
+            {message && <Message type='error' msg={message} />}
             <div className={styles.container_login}>
                 <div className={styles.container_login}>
                     <img src={ScreenLogin} alt="" />

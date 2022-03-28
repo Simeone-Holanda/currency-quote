@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Message from "../../layout/Message/Message";
 import ScreenLogin from '../../../img/ScreenLogin.png'
 import FormLogin from "../../layout/form/screen/FormLogin";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 const Login = () => {
@@ -13,9 +13,14 @@ const Login = () => {
     const [message, setMessage] = useState('')
     const [type, setType] = useState('')
 
-    if (location.state) {
-        setMessage(location.state.message)
-    }
+
+    useEffect(() => {
+        if (location.state) {
+            setMessage(location.state.message)
+            setType(location.state.type)
+            navigate('/')
+        }
+    }, [])
 
     function loginUser(dataLogin) {
         setMessage('')
@@ -28,7 +33,7 @@ const Login = () => {
         }).then(data => data.json())
             .then(resp => {
                 if (resp.status == '202') {
-                    navigate('/dashboard', { state: resp })
+                    navigate('/dashboard', { state: { authorized: true } })
                 } else {
                     setMessage(resp.message)
                     setType('error')

@@ -5,15 +5,25 @@ import dolar_icon from '../../../img/dolar_icon.png';
 import Dropdown from '../../layout/Dropdown/Dropdown';
 import CardCoin from '../../layout/CardCoin/CardCoin';
 import TablePrice from '../../layout/TablePrice/TablePrice';
-import { useState } from 'react';
 import Loading from '../../layout/Load/Loading';
+
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
 
     const coins = ['Dolar Americano', 'Euro']
+    const navigate = useNavigate()
+    const location = useLocation();
     const [coinSelected, setCoinSelected] = useState('')
     const [checkButton, setCheckButton] = useState(true)
 
+    useEffect(() => {
+        console.log(location)
+        if (!location.state) {
+            navigate('/login', { state: { message: 'Faça login para acessar o dashboard', type: 'error' } })
+        }
+    }, [])
 
     function updateCoins() {
         setCheckButton(false)
@@ -33,7 +43,7 @@ const Dashboard = () => {
                     <button onClick={updateCoins}><img src={load_icon} alt="" /></button>
                 </header>
                 <section>
-                    <div>git
+                    <div>
                         {checkButton ? (
                             <div className={styles.container_cards}>
                                 <CardCoin coin1="BRL" coin2="USD" CoinIcon={dolar_icon} onChange={checkButton} />
@@ -53,7 +63,6 @@ const Dashboard = () => {
                             /></div>
 
                     </div>
-
 
                     <TablePrice coin={coinSelected} />
                 </section>
