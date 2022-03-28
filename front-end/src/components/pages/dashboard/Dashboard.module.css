@@ -1,6 +1,8 @@
 .container_dashboard{
     margin: auto;
-    width: 1020px;
+    max-width: 1020px;
+    width: 100%;
+    color: #333333;
 }
 
 .container_header{
@@ -8,6 +10,10 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.container_header{
+    font-size: 3.6rem;
 }
 
 .container_header img {
@@ -21,6 +27,7 @@
 
 .container_cards{
     display: flex;
+
     justify-content: space-around;
 }
 
@@ -28,10 +35,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px;
 }
 
 .select_coin_type button{
     cursor: pointer;
+}
+
+.select_coin_type button{
+    cursor: pointer;
+}
+
+.select_coin_type h3{
+    font-size: 3.6rem;
 }
 
 button{
