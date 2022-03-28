@@ -1,7 +1,8 @@
+import styles from './Dropdown.module.css'
 
 const Dropdown = ({ options, value, handleOnChange }) => {
     return (
-        <div>
+        <div className={styles.cotainer_dropdown}>
             <select
                 onChange={handleOnChange}
                 value={value || ''}
@@ -12,7 +13,7 @@ const Dropdown = ({ options, value, handleOnChange }) => {
                     </option>
                 ))}
             </select>
-        </div>
+        </div >
 
     );
 }
