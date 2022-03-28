@@ -4,6 +4,9 @@
     height: 828px;
     min-height: 75%;
 }
+.container_login img{
+    width: 50%;
+}
 
 .form {
     display: flex;
@@ -31,4 +34,14 @@
     font-size: 26px;
     color: #828282;
     text-align: center;
+}
+
+
+@media(max-width:705px){
+    .container_login{
+        flex-direction: column;
+    }
+    .container_login img{
+        width: 100%;
+    }
 }

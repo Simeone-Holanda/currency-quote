@@ -11,7 +11,7 @@
 }
 
 .form_login input {
-    width: 320px;
+    width: 100%;
     height: 46px;
     border-radius: 0px;
     border: 1px solid #E0E0E0;
