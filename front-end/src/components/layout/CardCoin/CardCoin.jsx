@@ -13,17 +13,17 @@ const CardCoin = ({ coin1, coin2, CoinIcon, onChange }) => {
             }
         }).then(data => data.json())
             .then(resp => {
-                console.log(resp)
                 setValueCoin(resp['result'])
             })
             .catch(e => console.log(e))
+
     }, [onChange])
 
     return (
         <div className={styles.container_card_coin}>
             <div>
                 <p>{coin1} / {coin2}</p>
-                <h1> <span>R$</span> {valueCoin}</h1>
+                <h3> <span>R$</span> {valueCoin}</h3>
             </div>
             <div>
                 <img src={CoinIcon} alt="" />
