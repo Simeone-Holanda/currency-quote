@@ -23,6 +23,7 @@
 
 .container_header button{
     cursor: pointer;
+    margin: 15px;
 }
 
 .container_cards{
@@ -46,6 +47,10 @@
     font-size: 3.6rem;
 }
 
+.customBtLogout{
+    cursor: pointer;
+}
+
 button{
-    border: none
+    border: none;
 }

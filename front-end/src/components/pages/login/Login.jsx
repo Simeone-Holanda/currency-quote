@@ -5,6 +5,7 @@ import Message from "../../layout/Message/Message";
 import ScreenLogin from '../../../img/ScreenLogin.png'
 import FormLogin from "../../layout/form/screen/FormLogin";
 import { useEffect, useState } from 'react';
+import { i18n } from '../../../translate/i18n'
 
 
 const Login = () => {
@@ -50,10 +51,8 @@ const Login = () => {
                     <img src={ScreenLogin} alt="" />
                     <div className={styles.form}>
                         <div className={styles.container_infos}>
-                            <h1> Olá! Bem vindo de volta</h1>
-                            <p>Faça login com seus dados inseridos
-                                durante o seu registro.
-                            </p>
+                            <h1>{i18n.t('titles.login')}</h1>
+                            <p>{i18n.t('subtitles.login')}</p>
                         </div>
                         <FormLogin handleSubmit={loginUser} btnText="Login" />
                     </div>

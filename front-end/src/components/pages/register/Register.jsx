@@ -4,7 +4,7 @@ import ScreenLogin from '../../../img/ScreenLogin.png';
 import FormRegister from "../../layout/form/screen/FormRegister";
 import { useState } from 'react';
 import Message from '../../layout/Message/Message';
-
+import { i18n } from '../../../translate/i18n'
 const Register = () => {
     const navigate = useNavigate()
     const [message, setMessage] = useState('')
@@ -40,9 +40,8 @@ const Register = () => {
                     <img src={ScreenLogin} alt="" />
                     <div className={styles.form}>
                         <div className={styles.container_infos}>
-                            <h1> Olá! Cadastra-se </h1>
-                            <p>Preencha os dados abaixo para concluir o cadastro.
-                            </p>
+                            <h1>{i18n.t('titles.register')}</h1>
+                            <p>{i18n.t('subtitles.register')}</p>
                         </div>
                         <FormRegister handleSubmit={createUser} btnText="Cadastre-se" />
                     </div>

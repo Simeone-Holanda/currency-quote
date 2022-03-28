@@ -3,6 +3,7 @@ import styles from './TablePrice.module.css'
 import { useEffect, useState } from 'react';
 import dolar_icon from '../../../img/dolar_icon.png'
 import Loading from '../Load/Loading'
+import { i18n } from '../../../translate/i18n'
 
 const TablePrice = ({ coin }) => {
 
@@ -50,10 +51,10 @@ const TablePrice = ({ coin }) => {
             <table>
                 <tbody>
                     <tr key="1" className={styles.custonButon}>
-                        <td width="40%">Moeda <button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
-                        <td width="10%">Minima <button onClick={reverseLines}><img src={button_icon} alt="" /></button> </td>
-                        <td width="10%">Maxima <button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
-                        <td width="40%" align='end'>Variação <button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
+                        <td width="40%">{i18n.t('table.coin')} <button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
+                        <td width="10%">{i18n.t('table.min')} <button onClick={reverseLines}><img src={button_icon} alt="" /></button> </td>
+                        <td width="10%">{i18n.t('table.max')}<button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
+                        <td width="40%" align='end'>{i18n.t('table.variation')}<button onClick={reverseLines}><img src={button_icon} alt="" /></button></td>
                     </tr>
                     {quotes.length > 0 ? showLoad && (quotes[0]['data'].map((quote) => (
                         <tr key={quotes[0]['data'].indexOf(quote)}>

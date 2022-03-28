@@ -9,6 +9,7 @@
     width: 320px;
     height: 46px;
     border: none;
+    margin-bottom: 10px;
 }
 
 .btn:hover{

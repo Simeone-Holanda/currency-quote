@@ -3,12 +3,12 @@ import Button from "../button/Button";
 import styles from './FormLogin.module.css';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import { i18n } from '../../../../translate/i18n'
 
 const FormRegister = ({ handleSubmit, btnText }) => {
 
     const [dataUser, setDataUser] = useState({})
-    
+
     const submit = (e) => {
         e.preventDefault()
         handleSubmit(dataUser)
@@ -22,34 +22,34 @@ const FormRegister = ({ handleSubmit, btnText }) => {
             <form onSubmit={submit} className={styles.form}>
                 <Input
                     type="text"
-                    text="Nome de usuário"
+                    text={i18n.t('inputs.name')}
                     name="username"
                     handleOnChange={handleOnChange}
                     placeholder="Digite um nome de usuário"
                 />
                 <Input
                     type="email"
-                    text="Email"
+                    text={i18n.t('inputs.email')}
                     name="email"
                     handleOnChange={handleOnChange}
                     placeholder="Exemplo@gmail.com"
                 />
                 <Input
                     type="password"
-                    text="Senha"
+                    text={i18n.t('inputs.password')}
                     name="password"
                     handleOnChange={handleOnChange}
                     placeholder="Enter Password"
                 />
                 <Input
                     type="password"
-                    text="Senha novamente"
+                    text={i18n.t('inputs.password_again')}
                     name="password2"
                     handleOnChange={handleOnChange}
                     placeholder="Enter Password again"
                 />
-                <Button text={btnText} />
-                <Link className={styles.link} to='/login'>Já possuo uma conta</Link>
+                <Button text={i18n.t('buttons.register')} />
+                <Link className={styles.link} to='/login'>{i18n.t('navigationPageLink.register')}</Link>
 
             </form>
         </>

@@ -3,6 +3,7 @@ import Button from "../button/Button";
 import styles from './FormLogin.module.css'
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { i18n } from '../../../../translate/i18n'
 
 const FormLogin = ({ handleSubmit, btnText }) => {
 
@@ -22,26 +23,26 @@ const FormLogin = ({ handleSubmit, btnText }) => {
             <form onSubmit={submit} className={styles.form}>
                 <Input
                     type="email"
-                    text="Email"
+                    text={i18n.t('inputs.email')}
                     name="email"
                     handleOnChange={handleOnChange}
                     placeholder="Exemplo@gmail.com"
                 />
-                <Link className={styles.link} to='/login'><p> Esqueceu a senha?</p></Link>
+                <Link className={styles.link} to='/login'><p>{i18n.t('navigationPageLink.forgot_password')}</p></Link>
                 <Input
                     type="password"
-                    text="Senha"
+                    text={i18n.t('inputs.password')}
                     name="password1"
                     handleOnChange={handleOnChange}
                     placeholder="Enter Password"
                 />
 
-                <Button text={btnText} />
+                <Button text={i18n.t('buttons.login')} />
 
             </form>
             <div>
                 <nav className={styles.nav}>
-                    <Link className={styles.link} to='/register'>Cadastre-se</Link>
+                    <Link className={styles.link} to='/register'>{i18n.t('navigationPageLink.login')}</Link>
                 </nav>
             </div>
 
