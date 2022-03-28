@@ -1,7 +1,6 @@
 import styles from './NavTop.module.css'
 import Logo_Beeteller from '../../../img/Logo_Beeteller.png'
 import Vector from '../../../img/Vector.png'
-import Container from '../container/Container';
 
 const NavTop = () => {
     return (
