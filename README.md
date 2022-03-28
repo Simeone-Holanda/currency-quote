@@ -1,5 +1,5 @@
 # currency-quote
-Teste para vaga de desenvolvedor Full Stack. A descrição do desafio pode ser encontrada <a link='https://github.com/beetellergroup/selecao-full-stack'>Aqui</a> . 
+Teste para vaga de desenvolvedor Full Stack. A descrição do desafio pode ser encontrada <a href='https://github.com/beetellergroup/selecao-full-stack'>Aqui</a> . 
 
 
 # Estratégia e decisões tomadas
@@ -19,6 +19,8 @@ O Mesmo caso ocorreu para a parte de mudar o idioma do site, tendo em vista que 
     git clone https://github.com/Simeone-Holanda/currency-quote
 
     cd currency-quote
+    
+    cd back-end
 
     python -m venv venv
 
@@ -32,7 +34,8 @@ O Mesmo caso ocorreu para a parte de mudar o idioma do site, tendo em vista que 
 
     python manage.py runserver 
 
-## Front-end(Vá até a pasta front-end)
+## Front-end 
+    Abra um novo terminal e vá ate a pasta front-end desse repositório
     yarn install - Instalando as dependencias 
     yarn dev  - executando a aplicação 
 
