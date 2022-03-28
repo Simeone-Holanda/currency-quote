@@ -9,6 +9,7 @@ const Register = () => {
     const API_HOST = 'http://localhost:8000/auth/register/';
 
     function createUser(dataUser) {
+        // TODO: Fazer o tratamento de respostas da api e mostrar mensagens com base neles
         const response = fetch(`${API_HOST}auth/`, {
             method: 'POST',
             headers: {
@@ -25,7 +26,7 @@ const Register = () => {
 
     return (
         <>
-            <div>
+            <div className={styles.container_login}>
                 <div className={styles.container_login}>
                     <img src={ScreenLogin} alt="" />
                     <div className={styles.form}>
