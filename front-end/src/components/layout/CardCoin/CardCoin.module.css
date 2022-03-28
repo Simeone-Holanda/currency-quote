@@ -1,32 +1,51 @@
 .container_card_coin{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 33%;
-    height: 189px;
+    width: 33.3%;
+    height: 239px;
     padding: 24px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    margin: 5px;
+    margin: 9px;
 }
 
-.container_card_coin h1 {
+.container_card_coin h3 {
     color: #333333;
-    font-size: 45px;
-    margin-top: 10px;
+    font-size: 4.8rem; 
 }
 
-.container_card_coin h1 span{
+.container_card_coin h3 span{
     color: #828282;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 0;
 }
 
 
 .container_card_coin p{
-    font-size: 18px;
+    font-size: 3.8em;
     margin-bottom: 15px;
 }
 
 .container_card_coin img{
     margin: auto;
+}
+
+@media(max-width: 1025px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media(max-width: 500px){
+    html{
+        font-size: 35%;
+    }
+}
+
+@media(max-width: 900px){
+    .container_card_coin img{
+        margin: auto;
+        width: 8.4rem;
+    }
 }
